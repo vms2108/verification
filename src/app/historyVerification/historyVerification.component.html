@@ -1,3 +1,17 @@
-<p>
-  historyVerification works!
-</p>
+<div class="container">
+    <div class="row" >
+        <div class="cell">id проверки</div>
+        <div class="cell">id пользователя</div>
+        <div class="cell">номер сделки</div>
+        <div class="cell">дата проверки</div>
+        <div class="cell">результат</div>
+    </div>
+    <div class="row" *ngFor="let item of Records" >
+        <div class="cell">{{item.id}}</div>
+        <div class="cell">{{item.userId}}</div>
+        <div class="cell">{{item.deal}}</div>
+        <div class="cell">{{item.data}}</div>
+        <div class="cell">{{item.result}}</div>
+    </div>
+</div>
+

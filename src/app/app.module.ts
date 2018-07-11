@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AutorizationComponent } from './autorization/autorization.component';
-import { UsersComponent } from './users/users.component';
 import { VerificationComponent } from './verification/verification.component';
 import { MainComponent } from './main/main.component';
 import { IdentificationComponent } from './identification/identification.component';
@@ -19,8 +18,6 @@ import { PhotoComponent } from './form/photo/photo.component';
    declarations: [
       AppComponent,
       AutorizationComponent,
-      UsersComponent,
-      UsersComponent,
       VerificationComponent,
       MainComponent,
       IdentificationComponent,
