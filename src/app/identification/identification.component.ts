@@ -35,6 +35,65 @@ export class IdentificationComponent implements OnInit {
   validityAddition = '02.02.2022';
   labelValidityAddition = 'Срок действия';
 
+  Base = 'neutral';
+  Location = 'neutral';
+  Main = 'neutral';
+  Addition = 'neutral';
+  Binding = 'neutral';
   ngOnInit() {
+  }
+
+  toggleBase($event) {
+    this.Base = $event;
+  }
+  toggleLocation($event) {
+    this.Location = $event;
+  }
+  toggleMain($event) {
+    this.Main = $event;
+  }
+  toggleAddition($event) {
+    this.Addition = $event;
+  }
+  toggleBinding($event) {
+    this.Binding = $event;
+  }
+
+  allGreen () {
+    return this.Base === 'on' &&
+    this.Location === 'on' &&
+    this.Main === 'on' &&
+    this.Addition === 'on' &&
+    this.Binding === 'on';
+  }
+
+  greenOrRed() {
+    return !this.allGreen() &&
+    this.Base !== 'neutral' &&
+    this.Location !== 'neutral' &&
+    this.Main !== 'neutral' &&
+    this.Addition !== 'neutral' &&
+    this.Binding !== 'neutral';
+  }
+
+  get firstButton() {
+    if (this.allGreen()) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  successClick() {
+    console.log('Success');
+  }
+  unsuccessClick() {
+    console.log('unSuccess');
+  }
+  get secondButton() {
+    if (this.greenOrRed()) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { ButtonComponent } from './form/button/button.component';
 import { FieldComponent } from './form/field/field.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -27,7 +28,8 @@ import { PhotoComponent } from './form/photo/photo.component';
       HistoryIdentificationComponent,
       FieldComponent,
       ToggleComponent,
-      PhotoComponent
+      PhotoComponent,
+      ButtonComponent
    ],
    imports: [
       BrowserModule,
