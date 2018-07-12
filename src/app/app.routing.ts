@@ -7,7 +7,6 @@ import { VerificationComponent } from './verification/verification.component';
 import { IdentificationComponent } from './identification/identification.component';
 import { AuthGuard } from './core/guards';
 import { LoginComponent } from './login';
-import { RegisterComponent } from './register';
 
 const routes: Routes = [
   { path: '', component: MainComponent, canActivate: [AuthGuard]},
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: 'history/verification', component: HistoryVerificationComponent, canActivate: [AuthGuard] },
   { path: 'history/identification', component: HistoryIdentificationComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: '' }
 ];
 

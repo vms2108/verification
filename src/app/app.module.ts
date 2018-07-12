@@ -15,7 +15,6 @@ import { PhotoComponent } from './form/photo/photo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login';
-import { RegisterComponent } from './register';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
@@ -30,8 +29,7 @@ import { CoreModule } from './core/core.module';
       ToggleComponent,
       PhotoComponent,
       ButtonComponent,
-      LoginComponent,
-      RegisterComponent
+      LoginComponent
    ],
    imports: [
       BrowserModule,
