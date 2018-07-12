@@ -5,7 +5,7 @@ import { History } from '../history/history.model';
 @Component({
   selector: 'app-historyverification',
   templateUrl: './historyVerification.component.html',
-  styleUrls: ['./historyVerification.component.css'],
+  styleUrls: ['./historyVerification.component.scss'],
   providers: [StaticDataSource]
 })
 export class HistoryVerificationComponent implements OnInit {

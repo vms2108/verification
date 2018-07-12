@@ -1,17 +1,17 @@
-<div class="container">
-    <div class="row" >
-        <div class="cell">id проверки</div>
-        <div class="cell">id пользователя</div>
-        <div class="cell">номер сделки</div>
-        <div class="cell">дата проверки</div>
-        <div class="cell">результат</div>
+<div class="history-container">
+    <div class="history-container__row" >
+        <div class="history-container__cell">id проверки</div>
+        <div class="history-container__cell">id пользователя</div>
+        <div class="history-container__cell">номер сделки</div>
+        <div class="history-container__cell">дата проверки</div>
+        <div class="history-container__cell">результат</div>
     </div>
-    <div class="row" *ngFor="let item of Records" >
-        <div class="cell">{{item.id}}</div>
-        <div class="cell">{{item.userId}}</div>
-        <div class="cell">{{item.deal}}</div>
-        <div class="cell">{{item.data}}</div>
-        <div class="cell">{{item.result}}</div>
+    <div class="history-container__row" *ngFor="let item of Records" >
+        <div class="history-container__cell">{{item.id}}</div>
+        <div class="history-container__cell">{{item.userId}}</div>
+        <div class="history-container__cell">{{item.deal}}</div>
+        <div class="history-container__cell">{{item.data}}</div>
+        <div class="history-container__cell">{{item.result}}</div>
     </div>
 </div>
 

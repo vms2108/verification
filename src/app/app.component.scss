@@ -1,14 +1,19 @@
 .page-header {
   margin: 0;
+  margin-bottom: 30px;
   width: 100%;
+  background: rgba(150,200,200, 0.7);
 
   &__wrapper {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
+      
   }
 
   &__items {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -19,12 +24,11 @@
     display: flex;
     text-decoration: none;
     color: #000;
-    font-size: 24px;
-    padding: 20px;
-    border: 2px solid black;
+    font-size: 18px;
+    padding: 20px 30px;
 
     &:hover {
-      background: rgba(200,200,200, 0.3);
+      background: rgba(230,230,230, 0.9);
     }
   }
 }

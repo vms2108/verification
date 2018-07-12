@@ -5,15 +5,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VerificationComponent } from './verification/verification.component';
 import { IdentificationComponent } from './identification/identification.component';
-import { AutorizationComponent } from './autorization/autorization.component';
+import { AuthGuard } from './_guards';
+import { LoginComponent } from './login';
+import { RegisterComponent } from './register';
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
-  { path: 'verification', component: VerificationComponent },
-  { path: 'identification', component: IdentificationComponent},
-  { path: 'login', component: AutorizationComponent },
-  { path: 'history/verification', component: HistoryVerificationComponent },
-  { path: 'history/identification', component: HistoryIdentificationComponent },
+  { path: '', component: MainComponent, canActivate: [AuthGuard]},
+  { path: 'verification', component: VerificationComponent, canActivate: [AuthGuard] },
+  { path: 'identification', component: IdentificationComponent, canActivate: [AuthGuard]},
+  { path: 'history/verification', component: HistoryVerificationComponent, canActivate: [AuthGuard] },
+  { path: 'history/identification', component: HistoryIdentificationComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: '' }
 ];
 

@@ -1,10 +1,11 @@
+import { UserService } from './_services/user.service';
+import { AuthGuard } from './_guards/auth.guard';
 import { ButtonComponent } from './form/button/button.component';
 import { FieldComponent } from './form/field/field.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AutorizationComponent } from './autorization/autorization.component';
 import { VerificationComponent } from './verification/verification.component';
 import { MainComponent } from './main/main.component';
 import { IdentificationComponent } from './identification/identification.component';
@@ -13,11 +14,17 @@ import { HistoryIdentificationComponent } from './historyIdentification/historyI
 import { AppRoutingModule } from './app.routing';
 import { ToggleComponent } from './form/toggle/toggle.component';
 import { PhotoComponent } from './form/photo/photo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AlertComponent } from './_directives';
+import { LoginComponent } from './login';
+import { RegisterComponent } from './register';
+import { AlertService } from './_services';
+import { JwtInterceptor, fakeBackendProvider } from './_helpers';
 
 @NgModule({
    declarations: [
       AppComponent,
-      AutorizationComponent,
       VerificationComponent,
       MainComponent,
       IdentificationComponent,
@@ -26,13 +33,28 @@ import { PhotoComponent } from './form/photo/photo.component';
       FieldComponent,
       ToggleComponent,
       PhotoComponent,
-      ButtonComponent
+      ButtonComponent,
+      AlertComponent,
+      LoginComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,
-      AppRoutingModule
+      AppRoutingModule,
+      ReactiveFormsModule,
+      HttpClientModule
    ],
-   providers: [],
+   providers: [
+       AuthGuard,
+       AlertService,
+       UserService,
+       {
+           provide: HTTP_INTERCEPTORS,
+           useClass: JwtInterceptor,
+           multi: true
+       },
+       fakeBackendProvider
+   ],
    bootstrap: [
       AppComponent
    ]
