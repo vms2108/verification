@@ -1,8 +1,11 @@
+import { AuthInfo } from './../core/models/authInfo.model';
+import { UserInfo } from './../core/models/userInfo.model';
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { User } from '../core/models';
 import { UserService } from '../core/services';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -10,28 +13,15 @@ import { UserService } from '../core/services';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+    private userInfo: UserInfo;
+    private authInfo: AuthInfo;
 
-  currentUser: User;
-  users: User[] = [];
-
-  constructor(private userService: UserService) {
-      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit() {
-      this.loadAllUsers();
+      this.userInfo = this.authService.getUserInfo();
+      this.authInfo = this.authService.getAuthInfo();
+      console.log(this.userInfo);
   }
-
-  deleteUser(id: number) {
-      this.userService.delete(id).pipe(first()).subscribe(() => {
-          this.loadAllUsers();
-      });
-  }
-
-  private loadAllUsers() {
-      this.userService.getAll().pipe(first()).subscribe(users => {
-          this.users = users;
-      });
-  }
-
 }
