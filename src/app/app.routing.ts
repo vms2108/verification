@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VerificationComponent } from './verification/verification.component';
 import { IdentificationComponent } from './identification/identification.component';
-import { AuthGuard } from './_guards';
+import { AuthGuard } from './core/guards';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 

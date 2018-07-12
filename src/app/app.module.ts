@@ -1,5 +1,3 @@
-import { UserService } from './_services/user.service';
-import { AuthGuard } from './_guards/auth.guard';
 import { ButtonComponent } from './form/button/button.component';
 import { FieldComponent } from './form/field/field.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,11 +14,9 @@ import { ToggleComponent } from './form/toggle/toggle.component';
 import { PhotoComponent } from './form/photo/photo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AlertComponent } from './_directives';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
-import { AlertService } from './_services';
-import { JwtInterceptor, fakeBackendProvider } from './_helpers';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
    declarations: [
@@ -34,7 +30,6 @@ import { JwtInterceptor, fakeBackendProvider } from './_helpers';
       ToggleComponent,
       PhotoComponent,
       ButtonComponent,
-      AlertComponent,
       LoginComponent,
       RegisterComponent
    ],
@@ -42,18 +37,10 @@ import { JwtInterceptor, fakeBackendProvider } from './_helpers';
       BrowserModule,
       AppRoutingModule,
       ReactiveFormsModule,
-      HttpClientModule
+      HttpClientModule,
+      CoreModule
    ],
    providers: [
-       AuthGuard,
-       AlertService,
-       UserService,
-       {
-           provide: HTTP_INTERCEPTORS,
-           useClass: JwtInterceptor,
-           multi: true
-       },
-       fakeBackendProvider
    ],
    bootstrap: [
       AppComponent

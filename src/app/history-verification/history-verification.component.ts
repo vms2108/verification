@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StaticDataSource } from '../history/static.datasource';
-import { History } from '../history/history.model';
+import { StaticDataSource } from '../core/services/static.datasource';
+import { History } from '../core/models/history.model';
 
 @Component({
   selector: 'app-history-verification',
@@ -13,7 +13,6 @@ export class HistoryVerificationComponent implements OnInit {
   constructor(private staticdata: StaticDataSource) { }
 
   ngOnInit() {
-    console.log(this.staticdata.getHistory());
   }
 
   get Records(): History[] {

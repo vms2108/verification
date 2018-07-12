@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { History } from './history.model';
+import { History } from '../models/history.model';
 
 @Injectable()
 export class StaticDataSource {

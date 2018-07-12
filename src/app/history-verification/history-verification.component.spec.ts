@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { HistoryVerificationComponent } from './historyVerification.component';
+import { HistoryVerificationComponent } from './history-verification.component';
 
 describe('HistoryVerificationComponent', () => {
   let component: HistoryVerificationComponent;

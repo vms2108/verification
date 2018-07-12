@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { HistoryIdentificationComponent } from './historyIdentification.component';
+import { HistoryIdentificationComponent } from './history-identification.component';
 
 describe('HistoryIdentificationComponent', () => {
   let component: HistoryIdentificationComponent;
