@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-historyidentification',
-  templateUrl: './historyIdentification.component.html',
-  styleUrls: ['./historyIdentification.component.css']
+  selector: 'app-history-identification',
+  templateUrl: './history-identification.component.html',
+  styleUrls: ['./history-identification.component.css']
 })
 export class HistoryIdentificationComponent implements OnInit {
 

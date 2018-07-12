@@ -1,5 +1,5 @@
-import { HistoryIdentificationComponent } from './historyIdentification/historyIdentification.component';
-import { HistoryVerificationComponent } from './historyVerification/historyVerification.component';
+import { HistoryIdentificationComponent } from './history-identification/history-identification.component';
+import { HistoryVerificationComponent } from './history-verification/history-verification.component';
 import { MainComponent } from './main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
